@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../dist/output.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Frontend Mentor | Insure landing page</title>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap');
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: gray;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  body {
+    background-color: hsl(0, 0%, 98%);
+    font-family: 'Karla';
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: 'DM Serif Display';
+    color: hsl(270, 9%, 17%);
+  }
+</style>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="w-full text-white">
+    <nav class="bg-gray-50 z-50 relative flex items-center justify-between w-full h-16" id="navbar">
+
+      <button href="#" class="ml-[6%]"><img src="../images/logo.svg"></button>
+      <ul class="hidden md:flex font-semibold text-gray-300" style="color: hsl(256, 26%, 20%);">
+        <li class="nav-button">
+          <a href="#">HOW WE WORK</a>
+        </li>
+        <li class="nav-button">
+          <a href="#">BLOG</a>
+        </li>
+        <li class="nav-button">
+          <a href="#">ACCOUNT</a>
+        </li>
+        <li class="nav-button">
+          <a href="#">VIEW PLANS</a>
+        </li>
+      </ul>
+      <button class="md:hidden mr-10 bg-slate-800" onclick="navigation()" id="opennav">
+        <img src="../images/icon-hamburger.svg">
+      </button>
+      <button class="mr-10 bg-slate-800" id="closenav" onclick="close()" hidden>
+        <img src="../images/icon-close.svg">
+      </button>
+    </nav>
+
+
+    <!-- Nav Mobile -->
+
+    <div class="fixed w-screen h-screen z-[100]" style="background-color: hsl(256, 26%, 20%);" id="navmobile" hidden>
+      <div class="w-[70%] h-fit mx-auto">
+        <ul class="text-white text-center font-extrabold text-2xl my-16">
+          <li class="navmobile-link"><a href="#">HOW WE WORK</a></li>
+          <li class="navmobile-link"><a href="#">BLOG</a></li>
+          <li class="navmobile-link"><a href="#">ACCOUNT</a></li>
+          <li class="navmobile-link"><a href="#">VIEW PLANS</a></li>
+        </ul>
+      </div>
+      <img src="../images/bg-pattern-mobile-nav.svg" class="absolute w-full" alt="">
+    </div>
+
+    <!-- header -->
+
+    <img src="../images/image-intro-mobile.jpg"
+      class="mx-auto w-full max-h-[400px] object-cover object-center lg:hidden">
+
+    <div class="w-full flex px-10 lg:px-28 max-h-[80vh]" style="background-color: hsl(256, 26%, 20%);">
+      <img src="../images/bg-pattern-intro-left-mobile.svg"
+        class="absolute scale-150 my-[41px] pattern-left-intro lg:hidden" alt="">
+      <img src="../images/bg-pattern-intro-left-desktop.svg"
+        class="hidden lg:inline-block top-[350px] lg:absolute pattern-left-intro" alt="">
+      <div class="lg:w-[50%] lg:mr-14 h-[450px] mt-6 z-50">
+        <div class="flex flex-col py-12">
+          <div>
+            <hr class="hidden lg:inline-block w-28 mb-6 ml-6 border-white ">
+            <h1 class="text-center mx-6 lg:text-left leading-tight text-[45px] 2xl:text-[70px] text-white">
+              Humanizing your <br>
+              insurance.</h1>
+          </div>
+          <p class="text-center mx-6 lg:text-left">Get your life insurance coverage easier and faster. We blend our
+            expertise and technology to help you find the
+            plan that's right for you. ensure you and your loved ones are protected.
+          </p>
+          <div class="flex justify-center w-full lg:justify-start">
+            <button href="#"
+              class="mx-6 my-10 px-5 py-2 border text-center transition hover:bg-white hover:text-purple-900">VIEW
+              PLANS</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="../images/image-intro-desktop.jpg" class="hidden lg:inline -mb-20 mt-16 w-[350px] xl:w-[30vw]" alt="">
+        <img src="../images/bg-pattern-intro-right-desktop.svg"
+          class="hidden lg:inline absolute top-0 right-0 z-10 w-[30vw]" alt="">
+      </div>
+  </header>
+
+
+  <!-- motif -->
+
+  <img src="../images/bg-pattern-intro-right-mobile.svg" class="absolute right-0 -my-[100px] lg:hidden inline w-36"
+    alt="">
+  <!-- 3 Icon -->
+
+  <div class="items-center text-center mt-56 mb-12 lg:mt-40 lg:text-left ">
+    <hr class="mx-auto my-10 lg:ml-[150px] w-36 border-[0.5px] border-violet-900 bg-violet-900">
+    <h1 class="text-[45px] lg:ml-[150px]">We're different</h1>
+  </div>
+  <div class="mx-auto my-0 h-[50%] text-center w-auto items-center flex-wrap-reverse flex flex-col lg:flex-row">
+
+    <div class="three-icon">
+      <img src="../images/icon-snappy-process.svg" class="img-three-icon" alt="">
+      <div class="my-5 px-10">
+        <h2 class="text-3xl lg:text-left">Snappy Process</h2>
+        <p class="lg:text-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eaque vel officia
+          possimus rem
+          impedit?
+          Minima voluptates officiis tempore necessitatibus odio, blanditiis adipisci nemo magni perferendis iure
+          suscipit
+          reprehenderit earum!</p>
+      </div>
+    </div>
+    <div class="three-icon">
+      <img src="../images/icon-affordable-prices.svg" class="img-three-icon" alt="">
+      <div class="my-5 px-10">
+        <h2 class="text-3xl lg:text-left">Affordable Prices</h2>
+        <p class="lg:text-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eaque vel officia
+          possimus rem
+          impedit?
+          Minima voluptates officiis tempore necessitatibus odio, blanditiis adipisci nemo magni perferendis iure
+          suscipit
+          reprehenderit earum!</p>
+      </div>
+    </div>
+    <div class="three-icon">
+      <img src="../images/icon-people-first.svg" class="img-three-icon" alt="">
+      <div class="my-5 px-10">
+        <h2 class="text-3xl lg:text-left">People First</h2>
+        <p class="lg:text-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eaque vel officia
+          possimus rem
+          impedit?
+          Minima voluptates officiis tempore necessitatibus odio, blanditiis adipisci nemo magni perferendis iure
+          suscipit
+          reprehenderit earum!</p>
+      </div>
+    </div>
+  </div>
+  <!-- Kotak Ungu -->
+
+  <div class="mx-auto px-2 h-auto w-[85%] lg:w-[90%] content-center my-8" style="background-color: hsl(256, 26%, 20%);">
+    <!-- <img src="../images/bg-pattern-how-we-work-mobile.svg" class="absolute mx-48 z-10" alt=""> -->
+    <div class="purple-box z-50">
+      <div class="flex max-h-full z-50  my-2 mx-6 ">
+        <h1 class="text-[40px] my-10 text-center text-white lg:w-96 lg:text-left">Find out more <br> about how we work
+        </h1>
+      </div>
+      <div class="flex items-center max-h-full w-72 my-2 ">
+        <button href="#"
+          class="w-36 mx-auto my-3 px-2 py-2 border text-white text-center transition hover:bg-white hover:text-purple-900">HOW
+          WE WORK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+
+  <footer>
+    <div class="bg-gray-100 h-[150vh] lg:h-[500px]">
+      <img src="../images/bg-pattern-footer-mobile.svg" class="w-full h-[180px] lg:hidden" alt="">
+      <img src="../images/bg-pattern-footer-desktop.svg" class="hidden lg:inline w-full h-[280px]" alt="">
+      <div class="flex items-center flex-col w-full h-16 z-50 -my-28">
+        <div class="flex flex-col lg:flex-row items-center lg:justify-between w-[80%] ">
+          <div class="flex my-5  w-40">
+            <img src="../images/logo.svg" class="mx-auto lg:mx-0">
+          </div>
+          <div class="flex my-5 justify-between w-40">
+            <img src="../images/icon-facebook.svg" class="mx-2" alt="">
+            <img src="../images/icon-twitter.svg" class="mx-2" alt="">
+            <img src="../images/icon-pinterest.svg" class="mx-2" alt="">
+            <img src="../images/icon-instagram.svg" class="mx-2" alt="">
+          </div>
+        </div>
+
+        <hr class="mx-auto w-[80%] m-10 border bg-slate-400 border-slate-400">
+        <div class="flex flex-col justify-between lg:flex-row text-center lg:text-left mx-auto items-center w-[95%] ">
+          <div class="flex lg:mx-auto content-center w-36 h-40 lg:mt-0">
+            <ul class="font-bold mx-auto lg:mx-0">
+              <h4 class="text-gray-400">OUR COMPANY</h4>
+              <li><a href="#" class="footer-link">WE WORK</a></li>
+              <li><a href="#" class="footer-link">WHY INSURE?</a></li>
+              <li><a href="#" class="footer-link">VIEW PLANS</a></li>
+              <li><a href="#" class="footer-link">REVIEWS</a></li>
+            </ul>
+          </div>
+          <div class="flex lg:mx-auto content-center w-36 h-40 lg:mt-0">
+            <ul class="font-bold mx-auto lg:mx-0">
+              <h4 class="text-gray-400">HELP ME</h4>
+              <li><a href="#" class="footer-link">FAQ</a></li>
+              <li><a href="#" class="footer-link">TERMS OF USE</a></li>
+              <li><a href="#" class="footer-link">PRIVACY POLICY</a></li>
+              <li><a href="#" class="footer-link">COOKIES</a></li>
+            </ul>
+          </div>
+          <div class="flex lg:mx-auto content-center w-36 h-40 lg:mt-0">
+            <ul class="font-bold mx-auto lg:mx-0">
+              <h4 class="text-gray-400">CONTACT</h4>
+              <li><a href="#" class="footer-link">SALES</a></li>
+              <li><a href="#" class="footer-link">SUPPORT</a></li>
+              <li><a href="#" class="footer-link">LIVE CHAT</a></li>
+            </ul>
+          </div>
+          <div class="flex lg:mx-auto content-center w-36 h-40 lg:mt-0">
+            <ul class="font-bold mx-auto lg:mx-0">
+              <h4 class="text-gray-400">OTHERS</h4>
+              <li><a href="#" class="footer-link">CAREERS</a></li>
+              <li><a href="#" class="footer-link">PRESS</a></li>
+              <li><a href="#" class="footer-link">LICENSES</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+
+    function navigation() {
+      document.getElementById('navmobile').removeAttribute('hidden');
+      document.getElementById('opennav').setAttribute('hidden', true);
+      document.getElementById('closenav').removeAttribute('hidden');
+    }
+
+    function close() {
+      document.getElementById('navmobile').setAttribute('hidden', true);
+      document.getElementById('opennav').removeAttribute('hidden');
+      document.getElementById('closenav').setAttribute('hidden', true);
+    }
+
+    document.getElementById('opennav').addEventListener('click', navigation);
+    document.getElementById('closenav').addEventListener('click', close);
+  </script>
+</body>
+
+</html>

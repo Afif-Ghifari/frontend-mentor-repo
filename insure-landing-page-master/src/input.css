@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-button {
+    @apply list-none mx-3 cursor-pointer p-3 transition text-gray-600 hover:text-black active:bg-gray-900 active:text-white;
+}
+
+.three-icon {
+    @apply flex mx-auto py-4 max-h-full max-w-[400px] flex-col content-start
+}
+
+.img-three-icon {
+    @apply mx-auto lg:mx-14 w-28
+}
+
+.footer-link {
+    @apply decoration-solid hover:underline
+}
+
+.pattern-left-intro {
+    @apply scale-105 -left-6 z-10
+}
+
+.purple-box {
+    @apply lg:static p-2 flex justify-between flex-col items-center max-w-fit m-auto lg:flex-wrap-reverse lg:max-w-full lg:flex-row lg:h-64
+}
+
+.navmobile-link{
+    @apply my-5 w-full px-2 py-2 hover:border-2 transition
+}
