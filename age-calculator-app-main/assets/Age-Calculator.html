@@ -1,0 +1,394 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator App</title>
+  <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,800&display=swap');
+
+
+
+body {
+    background-color: hsl(0, 0%, 94%);
+    padding: 40px 20px;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.container {
+    margin: auto;
+    padding: 30px 60px;
+    background-color: white;
+    width: 50%;
+    min-height: 70%;
+    max-height: 80%;
+    border-radius: 20px 20px 160px 20px;
+}
+
+.input-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+    font-family: 'Poppins';
+    font-weight: 700;
+}
+
+.input-date label p {
+    color: hsl(0, 1%, 44%);
+}
+
+.input-date input {
+    padding: 10px 15px;
+    width: 130px;
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 700;
+    border: 1px solid hsl(0, 0%, 86%);
+    border-radius: 5px;
+    outline: none;
+}
+
+.input-date input:focus {
+    border: 1px solid hsl(259, 100%, 65%);
+}
+
+.input-btn {
+    position: absolute;
+    top: 35%;
+    left: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: hsl(259, 100%, 65%);
+    border: 0px none;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.input-btn:hover {
+    background-color: hsl(0, 0%, 8%);
+}
+
+.output-date {
+    font-family: 'Poppins';
+    font-weight: 800;
+    font-style: italic;
+    font-size: 60px;
+}
+
+.output-date span {
+    color: hsl(259, 100%, 65%);
+
+}
+
+.error label {
+    color: hsl(0, 100%, 67%);
+}
+
+.error label p {
+    color: hsl(0, 100%, 67%);
+}
+
+.error input {
+    border: 1px solid hsl(0, 100%, 67%);
+}
+
+.err-container{
+    height: 14px;
+    margin: 10px 0px;
+}
+
+#errDay, #errMonth, #errYear{
+    font-size: x-small;
+}
+
+
+
+@media screen and (max-width: 1440px) {}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 60%;
+        min-height: 85%;
+    }
+
+    .input-date {
+        display: flex;
+        margin-bottom: 15px;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        font-family: 'Poppins';
+        font-weight: 700;
+        font-size: medium;
+    }
+
+
+    hr {
+        margin: 40px 15px;
+    }
+
+    .input-btn {
+        top: 36%;
+        left: 46%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 75%;
+        padding: 15px 30px;
+    }
+
+    .input-date input {
+        padding: 10px 15px;
+        width: 120px;
+    }
+
+    .input-btn {
+        top: 33%;
+        left: 45%;
+        padding: 15px;
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+    .container {
+        border-radius: 30px 30px 100px 30px;
+        padding: 20px 25px;
+        width: 80%;
+        height: 70%;
+    }
+
+    .input-date {
+        font-size: small;
+    }
+
+    .input-date label p {
+        font-size: medium;
+    }
+
+    .input-date input {
+        padding: 8px 8px;
+        width: 105px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .input-btn {
+        top: 31%;
+        left: 42%;
+        padding: 15px;
+    }
+
+    .output-date {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .input-date input {
+        width: 65px;
+    }
+
+    .input-btn {
+        top: 32%;
+        left: 40%;
+        padding: 12px;
+    }
+    .output-date {
+        font-size: 35px;
+    }
+}
+</style>
+
+<body>
+  <div class="container">
+    <form id="dateForm">
+      <div class="input-date">
+        <label>
+          <p>DAY</p>
+          <input type="number" placeholder="DD" min="1" id="dayInput" value="">
+          <div class="err-container">
+            <p id="errDay"></p>
+          </div>
+        </label>
+        <label>
+          <p>MONTH</p>
+          <input type="number" placeholder="MM" min="1" id="monthInput" value="">
+          <div class="err-container">
+            <p id="errMonth"></p>
+          </div>
+        </label>
+        <label>
+          <p>YEAR</p>
+          <input type="number" placeholder="YYYY" id="yearInput" value="">
+          <div class="err-container">
+            <p id="errYear"></p>
+          </div>
+        </label>
+      </div>
+      <label>
+        <button type="submit" class="input-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="33" viewBox="0 0 46 44">
+            <g fill="none" stroke="#FFF" stroke-width="2">
+              <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44" />
+            </g>
+          </svg>
+        </button>
+      </label>
+    </form>
+
+    <hr>
+
+    <div class="output-date">
+      <div><span id="outputYears">- -</span> years</div>
+      <div><span id="outputMonths">- -</span> months</div>
+      <div><span id="outputDays">- -</span> days</div>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript">
+    const dateForm = document.getElementById('dateForm');
+const today = new Date();
+
+// Input
+const dayInput = document.getElementById('dayInput');
+const monthInput = document.getElementById('monthInput');
+const yearInput = document.getElementById('yearInput');
+
+let formInput = {
+    day: 0,
+    month: 0,
+    year: 0
+};
+
+// Output
+const dayOutput = document.getElementById('outputDays');
+const monthOutput = document.getElementById('outputMonths');
+const yearOutput = document.getElementById('outputYears');
+
+let formOutput = {
+    day: null,
+    month: null,
+    year: null
+};
+
+// Error
+const errDay = document.getElementById('errDay');
+const errMonth = document.getElementById('errMonth');
+const errYear = document.getElementById('errYear');
+
+// Error message
+const defaultMsg = "";
+const emptyFieldMsg = "This field is required";
+const invalidDay = "Must be a valid date"
+const invalidDateNum = "Must be a valid day"
+const invalidMonthNum = "Must be a valid month"
+const invalidYearNum = "Must be a valid year"
+
+
+const errMsg = (msg1, msg2, msg3) => {
+    dateForm.classList.add('error');
+    errDay.innerText = msg1;
+    errMonth.innerText = msg2;
+    errYear.innerText = msg3;
+}
+
+// Process
+dateForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    errMsg(defaultMsg, defaultMsg, defaultMsg);
+    dateForm.classList.remove('error');
+
+    // Input
+    formInput = {
+        day: String(dayInput.value),
+        month: String(monthInput.value),
+        year: String(yearInput.value)
+    }
+    event.preventDefault();
+
+    //  Error handling
+    if (formInput.day == "" || formInput.month == "" || formInput.year == "") {
+
+        // Empty field
+        errMsg(emptyFieldMsg, emptyFieldMsg, emptyFieldMsg);
+
+    } else if ((formInput.day <= 0 || formInput.day > 31) || (formInput.month <= 0 || formInput.month > 12) || (formInput.year <= 0 || formInput.year > today.getFullYear)) {
+
+        // Invalid date number
+        errMsg(invalidDateNum, invalidMonthNum, invalidYearNum);
+
+    } else if (formInput.year > today.getFullYear() || (formInput.day > today.getDate() || formInput.month > today.getMonth()) && formInput.year == today.getFullYear()){
+        
+        // No people from the future
+        errMsg(invalidDay, defaultMsg, defaultMsg);
+    
+    } else if (((formInput.month == 4 || formInput.month == 6 || formInput.month == 9 || formInput.month == 11) && formInput.day > 30)) {
+
+        // Invalid date by month
+        errMsg(invalidDay, defaultMsg, defaultMsg);
+
+    } else if (formInput.month == 2 && ((formInput.year % 4 != 0 && formInput.day > 28) || (formInput.year % 4 == 0 && formInput.day > 29))) {
+
+        // February
+        errMsg(invalidDay, defaultMsg, defaultMsg);
+
+    } else {
+
+        // Count
+        let yearsDiff = parseInt(today.getFullYear() - formInput.year);
+        let monthsDiff = parseInt(today.getMonth() - formInput.month);
+        let daysDiff = parseInt(today.getDay() - formInput.day);
+
+        if (yearsDiff < 0) {
+            console.log("invalid date");
+        } else if (monthsDiff < 0 && daysDiff < 0) {
+            yearsDiff--;
+            monthsDiff += 12;
+            daysDiff += 30;
+        } else if (monthsDiff >= 0 && daysDiff < 0) {
+            daysDiff += 30;
+        } else if (monthsDiff < 0 && daysDiff >= 0) {
+            monthsDiff += 12;
+        }
+
+        formOutput = {
+            day: String(daysDiff),
+            month: String(monthsDiff),
+            year: String(yearsDiff)
+        };
+
+        console.log("today", today);
+        console.log(formOutput);
+
+        // Output
+        if (formOutput.year != "NaN" || formOutput.month != "NaN" || formOutput.day != "NaN") {
+            yearOutput.innerText = formOutput.year;
+            monthOutput.innerText = formOutput.month;
+            dayOutput.innerText = formOutput.day;
+        } else {
+            yearOutput.innerText = "- -";
+            monthOutput.innerText = "- -";
+            dayOutput.innerText = "- -";
+        }
+    }
+});
+
+</script>
+
+</html>

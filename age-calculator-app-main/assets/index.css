@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,800&display=swap');
 
-@media screen and (max-width: 1440px) {
-    @media screen and (max-width: 1024px) {
-        @media screen and (max-width: 768px) {
-            @media screen and (max-width: 540px) {
-                @media screen and (max-width: 375px) {}
-            }
-        }
-    }
-}
 
 
 body {
@@ -16,6 +7,7 @@ body {
     padding: 40px 20px;
     display: flex;
     align-content: center;
+    justify-content: space-evenly;
 }
 
 .container {
@@ -23,38 +15,190 @@ body {
     padding: 30px 60px;
     background-color: white;
     width: 50%;
-    height: 70%;
+    min-height: 70%;
+    max-height: 80%;
     border-radius: 20px 20px 160px 20px;
 }
 
-.input-date{
+.input-date {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 75%;
+    width: 80%;
     font-family: 'Poppins';
     font-weight: 700;
 }
-.input-date input{
+
+.input-date label p {
+    color: hsl(0, 1%, 44%);
+}
+
+.input-date input {
     padding: 10px 15px;
-    width: 140px;
+    width: 130px;
     font-family: 'Poppins';
     font-size: 20px;
     font-weight: 700;
     border: 1px solid hsl(0, 0%, 86%);
     border-radius: 5px;
+    outline: none;
 }
-.input-date input:active{
+
+.input-date input:focus {
     border: 1px solid hsl(259, 100%, 65%);
 }
 
+.input-btn {
+    position: absolute;
+    top: 35%;
+    left: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: hsl(259, 100%, 65%);
+    border: 0px none;
+    border-radius: 100%;
+    cursor: pointer;
+}
 
-.output-date{
+.input-btn:hover {
+    background-color: hsl(0, 0%, 8%);
+}
+
+.output-date {
     font-family: 'Poppins';
     font-weight: 800;
     font-style: italic;
     font-size: 60px;
 }
-.output-date span{
+
+.output-date span {
     color: hsl(259, 100%, 65%);
+
+}
+
+.error label {
+    color: hsl(0, 100%, 67%);
+}
+
+.error label p {
+    color: hsl(0, 100%, 67%);
+}
+
+.error input {
+    border: 1px solid hsl(0, 100%, 67%);
+}
+
+.err-container{
+    height: 14px;
+    margin: 10px 0px;
+}
+
+#errDay, #errMonth, #errYear{
+    font-size: x-small;
+}
+
+
+
+@media screen and (max-width: 1440px) {}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 60%;
+        min-height: 85%;
+    }
+
+    .input-date {
+        display: flex;
+        margin-bottom: 15px;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        font-family: 'Poppins';
+        font-weight: 700;
+        font-size: medium;
+    }
+
+
+    hr {
+        margin: 40px 15px;
+    }
+
+    .input-btn {
+        top: 36%;
+        left: 46%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 75%;
+        padding: 15px 30px;
+    }
+
+    .input-date input {
+        padding: 10px 15px;
+        width: 120px;
+    }
+
+    .input-btn {
+        top: 33%;
+        left: 45%;
+        padding: 15px;
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+    .container {
+        border-radius: 30px 30px 100px 30px;
+        padding: 20px 25px;
+        width: 80%;
+        height: 70%;
+    }
+
+    .input-date {
+        font-size: small;
+    }
+
+    .input-date label p {
+        font-size: medium;
+    }
+
+    .input-date input {
+        padding: 8px 8px;
+        width: 105px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .input-btn {
+        top: 31%;
+        left: 42%;
+        padding: 15px;
+    }
+
+    .output-date {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .input-date input {
+        width: 65px;
+    }
+
+    .input-btn {
+        top: 32%;
+        left: 40%;
+        padding: 12px;
+    }
+    .output-date {
+        font-size: 35px;
+    }
 }

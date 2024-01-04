@@ -10,29 +10,51 @@
 
 <body>
   <div class="container">
-
-    <div class="input-date">
-      <label for="">
-        <p>DAY</p>
-        <input type="number" placeholder="DD" min="1" max="31">
+    <form id="dateForm">
+      <div class="input-date">
+        <label>
+          <p>DAY</p>
+          <input type="number" placeholder="DD" min="1" id="dayInput" value="">
+          <div class="err-container">
+            <p id="errDay"></p>
+          </div>
+        </label>
+        <label>
+          <p>MONTH</p>
+          <input type="number" placeholder="MM" min="1" id="monthInput" value="">
+          <div class="err-container">
+            <p id="errMonth"></p>
+          </div>
+        </label>
+        <label>
+          <p>YEAR</p>
+          <input type="number" placeholder="YYYY" id="yearInput" value="">
+          <div class="err-container">
+            <p id="errYear"></p>
+          </div>
+        </label>
+      </div>
+      <label>
+        <button type="submit" class="input-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="33" viewBox="0 0 46 44">
+            <g fill="none" stroke="#FFF" stroke-width="2">
+              <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44" />
+            </g>
+          </svg>
+        </button>
       </label>
-      <label for="">
-        <p>MONTH</p>
-        <input type="number" placeholder="MM" min="1" max="12">
-      </label><label for="">
-        <p>YEAR</p>
-        <input type="number" placeholder="YYYY" max="2023">
-      </label>
-    </div>
+    </form>
 
     <hr>
 
     <div class="output-date">
-      <div><span>- -</span> years</div>
-      <div><span>- -</span> month</div>
-      <div><span>- -</span> days</div>
+      <div><span id="outputYears">- -</span> years</div>
+      <div><span id="outputMonths">- -</span> months</div>
+      <div><span id="outputDays">- -</span> days</div>
     </div>
   </div>
 </body>
+
+<script type="text/javascript" src="assets/index.js"></script>
 
 </html>
